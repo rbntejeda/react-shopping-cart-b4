@@ -1,25 +1,56 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import SelectorProductos from './Containers/SelectorProductos';
+import ShoppingCart from './Components/ShoppingCart';
 
 class App extends Component {
+  constructor(props)
+  {
+    super(props)
+    this.state={
+      productos:[
+        {
+          id:1,
+          name:"Cuadernito",
+          price:1200
+        },
+        {
+          id:2,
+          name:"Lapiz bic",
+          price:1500
+        },
+        {
+          id:3,
+          name:"Mouse pad",
+          price:100
+        }
+      ]
+    }
+    this.shoppingCart=React.createRef();
+  }
+  // handleAddItem(e)
+  // {
+  //   const carrito = this.state.carrito.slice();
+  //   carrito.push({
+  //     producto:parseInt(e.get('producto')),
+  //     cantidad:parseInt(e.get('cantidad'))
+  //   })
+  //   this.setState({carrito:carrito});
+  // }
+
+  // handleUpdateCarrito({carrito})
+  // {
+
+  // }
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <div className="col-12">
+          <h1>Carrito de Compras</h1>
+        </div>
+        <SelectorProductos productos = { this.state.productos } />
+        <ShoppingCart ref={this.shoppingCart} />
       </div>
     );
   }
