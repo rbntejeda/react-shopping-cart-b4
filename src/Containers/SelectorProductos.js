@@ -1,9 +1,13 @@
 import React from "react";
 
-const SelectorProductos = ({productos,onSubmit})=>{
+const SelectorProductos = ({productos,ShoppingCart})=>{
     let handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(new FormData(e.target))
+        const form = new FormData(e.target)
+        ShoppingCart.current.AddItem({
+            producto:productos[parseInt(form.get('producto'))],
+            cantidad:parseInt(form.get('cantidad'))
+        })
     }
     return (
         <div>
@@ -22,7 +26,7 @@ const SelectorProductos = ({productos,onSubmit})=>{
                     <div className="col-7">
                     <select name="producto" className="form-control" required>
                         <option value="">Seleccione producto ...</option>
-                        {productos.map((p,i)=><option key={i} value={p.id}>{p.name} {p.price}</option>)}
+                        {productos.map((p,i)=><option key={i} value={i}>{p.name} {p.price}</option>)}
                     </select>
                     </div>
                     <div className="col">

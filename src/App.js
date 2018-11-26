@@ -22,26 +22,17 @@ class App extends Component {
           id:3,
           name:"Mouse pad",
           price:100
+        },
+        
+        {
+          id:4,
+          name:"Monitor",
+          price:2000
         }
       ]
     }
     this.shoppingCart=React.createRef();
   }
-  // handleAddItem(e)
-  // {
-  //   const carrito = this.state.carrito.slice();
-  //   carrito.push({
-  //     producto:parseInt(e.get('producto')),
-  //     cantidad:parseInt(e.get('cantidad'))
-  //   })
-  //   this.setState({carrito:carrito});
-  // }
-
-  // handleUpdateCarrito({carrito})
-  // {
-
-  // }
-
 
   render() {
     return (
@@ -49,7 +40,7 @@ class App extends Component {
         <div className="col-12">
           <h1>Carrito de Compras</h1>
         </div>
-        <SelectorProductos productos = { this.state.productos } />
+        <SelectorProductos productos = { this.state.productos } ShoppingCart={this.shoppingCart} />
         <ShoppingCart ref={this.shoppingCart} />
       </div>
     );
