@@ -1,4 +1,5 @@
 import React from "react";
+import Currency from "../Helpers/Currency";
 
 const SelectorProductos = ({productos,ShoppingCart})=>{
     const handleSubmit = (e) => {
@@ -26,7 +27,7 @@ const SelectorProductos = ({productos,ShoppingCart})=>{
                     <div className="col-7">
                     <select name="producto" className="form-control" required>
                         <option value="">Seleccione producto ...</option>
-                        {productos.map((p,i)=><option key={i} value={i}>{p.name} {p.price}</option>)}
+                        {productos.map((p,i)=><option key={i} value={i}>{p.name} {Currency(p.price)}</option>)}
                     </select>
                     </div>
                     <div className="col">

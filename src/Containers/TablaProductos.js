@@ -12,7 +12,7 @@ const TablaProductos = ({carrito, onPlusItem, onMinuItem, onRemoveItem}) => {
                         <th>Precio</th>
                         <th>Cantidad</th>
                         <th>Total</th>
-                        <th style={{width:"160px"}}>Opciones</th>
+                        <th style={{width:"130px"}}>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
