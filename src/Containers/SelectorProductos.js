@@ -1,7 +1,7 @@
 import React from "react";
 
 const SelectorProductos = ({productos,ShoppingCart})=>{
-    let handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target)
         ShoppingCart.current.AddItem({
