@@ -37,11 +37,22 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <div className="col-12">
-          <h1>Carrito de Compras</h1>
+        <div className="row">
+          <div className="col-12">
+            <h1>Carrito de Compras</h1>
+          </div>
         </div>
-        <SelectorProductos productos = { this.state.productos } ShoppingCart={this.shoppingCart} />
-        <ShoppingCart ref={this.shoppingCart} />
+        <div className="row">
+          <div className="col-12">
+            <SelectorProductos productos = { this.state.productos } ShoppingCart={this.shoppingCart} />
+          </div>
+        </div>
+        <br/>
+        <div className="row">
+          <div className="col-12">
+            <ShoppingCart ref={this.shoppingCart} />
+          </div>
+        </div>
       </div>
     );
   }

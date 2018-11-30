@@ -30,7 +30,7 @@ const SelectorProductos = ({productos,ShoppingCart})=>{
                     </select>
                     </div>
                     <div className="col">
-                        <input name="cantidad" type="number" className="form-control" placeholder="Cantidad" min={0} required/>
+                        <input name="cantidad" type="number" className="form-control" placeholder="Cantidad" min={0} defaultValue="0" required/>
                     </div>
                     <div className="col">
                         <button type="submit" className="btn btn-primary">Agregar</button>
